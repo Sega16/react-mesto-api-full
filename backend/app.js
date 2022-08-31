@@ -1,15 +1,21 @@
+require('dotenv').config();
+
 const express = require('express');
-const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const { celebrate, Joi, errors } = require('celebrate');
-const { login, createUser } = require('./controllers/users');
+
 const auth = require('./middlewares/auth');
 const userRouter = require('./routes/users');
 const cardRouter = require('./routes/cards');
+
+const { login, createUser } = require('./controllers/users');
+const { allowedCors } = require('./utils/constants');
 const { linkValidator } = require('./utils/linkValidator');
 const errorsServer = require('./middlewares/errorServer');
 const NotFoundError = require('./errors/notFoundError404');
-require('dotenv').config();
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000 } = process.env;
 
@@ -21,6 +27,20 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 
 app.use(cookieParser());
 app.use(express.json());
+
+app.use(requestLogger);
+
+app.use(cors({
+  origin: allowedCors,
+  credentials: true,
+}));
+
+// потом удалить
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post('/signin', celebrate({ // вход
   body: Joi.object().keys({
@@ -48,6 +68,7 @@ app.use('*', (req, res, next) => next(
   new NotFoundError('Упс! Тут пусто'),
 ));
 
+app.use(errorLogger);
 app.use(errors());
 app.use(errorsServer);
 
