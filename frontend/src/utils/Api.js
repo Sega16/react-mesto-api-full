@@ -89,7 +89,7 @@ class Api {
 }
 
 export const api = new Api({
-    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-39',
+    baseUrl: 'https://api.lastsprint.polozov.nomoredomains.sbs',
     headers: {
         authorization: 'e4c45541-457c-4141-84d1-030e378d240c',
         'Content-Type': 'application/json'
