@@ -4,5 +4,5 @@
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
 # IP 84.252.140.167
-# Frontend https://lastsprint.polozov.nomoredomains.sbs/
-# Backend https://api.lastsprint.polozov.nomoredomains.sbs/
+# [Frontend](https://lastsprint.polozov.nomoredomains.sbs/)
+# [Backend](https://api.lastsprint.polozov.nomoredomains.sbs/)
