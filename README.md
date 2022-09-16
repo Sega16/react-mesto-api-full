@@ -3,6 +3,6 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Ссылка на сайт lastsprint.polozov.nomoredomains.sbs 
-
-Открытый IP 84.252.139.73
+# IP 84.252.140.167
+# Frontend https://lastsprint.polozov.nomoredomains.sbs/
+# Backend https://api.lastsprint.polozov.nomoredomains.sbs/
