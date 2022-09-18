@@ -4,5 +4,6 @@ module.exports.DEFAUTL_CODE = 500;
 module.exports.allowedCors = [
   'http://localhost:3000',
   'http://localhost:3001',
-  'http://lastsprint.polozov.nomoredomains.sbs',
+  'http://polozov.nomoredomains.sbs',
+  'https://polozov.nomoredomains.sbs'
 ];

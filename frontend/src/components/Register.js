@@ -49,7 +49,7 @@ function Register(props) {
                     maxLength="15"
                 />
                 <span className="popup__text-error password-input-error"></span>
-                <button type="submit" className="auth__btn">
+                <button type="submit" className="auth__btn link">
                     Зарегистрироваться
                 </button>
                 <p className="auth__text">
